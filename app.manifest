@@ -1,5 +1,5 @@
 {
-    "namespace": "com.cerema.rivages",
+    "namespace": "dtermed.webapp.rivages",
     "git": "https://github.com/cerema/dtermed.webapp.rivages",
     "title": "Rivages",
     "description": "Shore lines recording",
