@@ -1,0 +1,128 @@
+{
+    "namespace": "com.cerema.rivages",
+    "git": "https://github.com/cerema/dtermed.webapp.rivages",
+    "title": "Rivages",
+    "description": "Shore lines recording",
+    "platform": "webapp",
+    "uid": "BJqA87LWX",
+    "version": "0.0.1",
+    "build": "0",
+    "copyright": "Copyright (c) 2018 CEREMA/DTerMed",
+    "license": "BSD3",
+    "author": {
+        "name": "Stéphane Zucatti",
+        "mail": "stephane.zucatti@cerema.fr",
+        "twitter": "@mydearsz",
+        "web": "https://stephanezucatti.com",
+        "github": https://github.com/zucatti""
+    },
+    "team": {
+        "debugger": [],
+        "tester": []
+    },
+    "langs": [
+        "en-US",
+        "fr-FR"
+    ],
+    "paths": {
+        "@omneedia": "/cdn",
+        "Contents": "Contents/Application/app",
+        "Lib": "Contents/Application/app/libraries",
+        "Ext": "@omneedia/omneedia/0.8.1/ext",
+        "Ext.ux": "@omneedia/omneedia/0.8.1/ext/ux/4.x",
+        "Ext.plugin": "@omneedia/omneedia/0.8.1/ext/plugin/4.x",
+        "Ext.util": "@omneedia/omneedia/0.8.1/ext/util/4.x"
+    },
+    "frameworks": [
+        {
+            "name": "EXTJS",
+            "version": "4.2.1",
+            "theme": "classic",
+            "style": "classic",
+            "src": [
+                "@omneedia/ajax/libs/extjs/{version}/ext-all-debug.js",
+                "@omneedia/ajax/libs/extjs/{version}/ext-theme-{style}.js"
+            ],
+            "res": [
+                "@omneedia/ajax/libs/extjs/{version}/resources/ext-theme-{style}/ext-theme-{style}-all-debug.css"
+            ],
+            "i18n": [
+                "@omneedia/ajax/libs/extjs/{version}/locale/locale-{lang}.js"
+            ]
+        },
+        {
+            "name": "jquery",
+            "version": "3.2.1",
+            "src": "https://cdn.omneedia.com/ajax/libs/jquery/{version}/jquery.js"
+        },
+        {
+            "name": "croppr",
+            "version": "1.3.3",
+            "src": [
+                "https://unpkg.com/cropperjs@{version}/dist/cropper.js"
+            ],
+            "res": [
+                "https://unpkg.com/cropperjs@{version}/dist/cropper.css"
+            ]
+        },
+        {
+            "name": "OMNEEDIA",
+            "version": "0.8.1",
+            "src": [
+                "@omneedia/ajax/libs/socket.io/2.0.3/socket.io.js",
+                "@omneedia/omneedia/{version}/utils.modules.js",
+                "@omneedia/omneedia/{version}/libs/App.js",
+                "@omneedia/omneedia/{version}/extjs.modules.js"
+            ],
+            "res": [
+                "@omneedia/ajax/libs/animate.css/3.5.2/animate.css",
+                "@omneedia/omneedia/{version}/res/webapp.css",
+                "Contents/Resources/webapp.css"
+            ],
+            "i18n": [
+                "@omneedia/omneedia/{version}/libs/Date/date-{lang}.js",
+                "@omneedia/omneedia/{version}/i18n/{lang}.json"
+            ]
+        }
+    ],
+    "auth": [
+        "CEREMA"
+    ],
+    "controllers": [
+        "CMain"
+    ],
+    "modules": [],
+    "plugins": [],
+    "api": [
+        "Rivages",
+        "Map",
+        "Photos"
+    ],
+    "db": [
+        "rivages",
+        "bpclight"
+    ],
+    "apt-keys": [
+        "ppa:ubuntugis/ppa"
+    ],
+    "apt": [
+        "gdal-bin"
+    ],
+    "packages": [
+        "express-fileupload",
+        "os-utils",
+        "shp-write"
+    ],
+    "icon": {
+        "background": "#FFFFFF",
+        "file": "app.png"
+    },
+    "splashscreen": {
+        "background": "#FFFFFF",
+        "color": "cyan",
+        "file": "app.png"
+    },
+    "server": {
+        "port": 3000
+    }
+}
