@@ -1,12 +1,12 @@
 {
     "namespace": "dtermed.webapp.rivages",
-    "git": "https://github.com/cerema/dtermed.webapp.rivages",
+    "git": "git@github.com:CEREMA/dtermed.webapp.rivages.git",
     "title": "Rivages",
     "description": "Shore lines recording",
     "platform": "webapp",
     "uid": "BJqA87LWX",
     "version": "0.0.1",
-    "build": "0",
+    "build": 1,
     "copyright": "Copyright (c) 2018 CEREMA/DTerMed",
     "license": "BSD3",
     "author": {

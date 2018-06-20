@@ -1,3 +1,5 @@
 {
-    "hello": "Hello World!"
+    "region": "Bonjour le monde !",
+    "PASSPORT_CERBERE": "Log in with CERBERE",
+    "PASSPORT_CEREMA": "Log in with AD"
 }
