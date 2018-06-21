@@ -114,7 +114,7 @@
         "shp-write"
     ],
     "icon": {
-        "background": "#FFFFFF",
+        "background": "cyan",
         "file": "app.png"
     },
     "splashscreen": {
