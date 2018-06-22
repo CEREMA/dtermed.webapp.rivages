@@ -95,7 +95,7 @@ App = {
 			if (req.originalUrl.split('/').length <= 1) return res.status(400).send('');
 			var uid = req.originalUrl.substr(req.originalUrl.lastIndexOf('/') + 1, req.originalUrl.length);
 			var db = App.using('db');
-			let zip = req.files.zip;
+			var zip = req.files.zip;
 			zip.mv(__dirname + path.sep + "archives" + path.sep + zip.name, function (err) {
 				if (err) return res.status(500).send(err);
 				db.query('rivages', 'SELECT * FROM tokens WHERE tkid="' + uid + '"', function (error, results) {
