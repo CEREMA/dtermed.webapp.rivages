@@ -1,0 +1,1193 @@
+{
+    "db": "rivages",
+    "tables": [
+        "geometry_columns",
+        "import",
+        "import_photos",
+        "import_points",
+        "import_segments",
+        "rivages_photo",
+        "rivages_points",
+        "rivages_segments",
+        "save_photos",
+        "tokens",
+        "track_points",
+        "tracks"
+    ],
+    "table": {
+        "geometry_columns": {
+            "index": "id",
+            "fields": [
+                "id",
+                "F_TABLE_CATALOG",
+                "F_TABLE_SCHEMA",
+                "F_TABLE_NAME",
+                "F_GEOMETRY_COLUMN",
+                "COORD_DIMENSION",
+                "SRID",
+                "TYPE"
+            ],
+            "field": {
+                "id": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "F_TABLE_CATALOG": {
+                    "required": false,
+                    "type": "string"
+                },
+                "F_TABLE_SCHEMA": {
+                    "required": false,
+                    "type": "string"
+                },
+                "F_TABLE_NAME": {
+                    "required": true,
+                    "type": "string"
+                },
+                "F_GEOMETRY_COLUMN": {
+                    "required": true,
+                    "type": "string"
+                },
+                "COORD_DIMENSION": {
+                    "required": false,
+                    "type": "int"
+                },
+                "SRID": {
+                    "required": false,
+                    "type": "int"
+                },
+                "TYPE": {
+                    "required": true,
+                    "type": "string"
+                }
+            }
+        },
+        "import": {
+            "index": "OGR_FID",
+            "fields": [
+                "OGR_FID",
+                "SHAPE",
+                "track_fid",
+                "track_seg_",
+                "track_se_1",
+                "ele",
+                "time",
+                "magvar",
+                "geoidheigh",
+                "name",
+                "cmt",
+                "desc",
+                "src",
+                "link1_href",
+                "link1_text",
+                "link1_type",
+                "link2_href",
+                "link2_text",
+                "link2_type",
+                "sym",
+                "type",
+                "fix",
+                "sat",
+                "hdop",
+                "vdop",
+                "pdop",
+                "ageofdgpsd",
+                "dgpsid",
+                "time2",
+                "user",
+                "appareil",
+                "nsegment",
+                "nomzip",
+                "limtdc"
+            ],
+            "field": {
+                "OGR_FID": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "SHAPE": {
+                    "required": true,
+                    "type": "geo"
+                },
+                "track_fid": {
+                    "required": false,
+                    "type": "float(9,0)"
+                },
+                "track_seg_": {
+                    "required": false,
+                    "type": "float(9,0)"
+                },
+                "track_se_1": {
+                    "required": false,
+                    "type": "float(9,0)"
+                },
+                "ele": {
+                    "required": false
+                },
+                "time": {
+                    "required": false,
+                    "type": "string"
+                },
+                "magvar": {
+                    "required": false
+                },
+                "geoidheigh": {
+                    "required": false
+                },
+                "name": {
+                    "required": false,
+                    "type": "string"
+                },
+                "cmt": {
+                    "required": false,
+                    "type": "string"
+                },
+                "desc": {
+                    "required": false,
+                    "type": "string"
+                },
+                "src": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link1_href": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link1_text": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link1_type": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link2_href": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link2_text": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link2_type": {
+                    "required": false,
+                    "type": "string"
+                },
+                "sym": {
+                    "required": false,
+                    "type": "string"
+                },
+                "type": {
+                    "required": false,
+                    "type": "string"
+                },
+                "fix": {
+                    "required": false,
+                    "type": "string"
+                },
+                "sat": {
+                    "required": false,
+                    "type": "float(9,0)"
+                },
+                "hdop": {
+                    "required": false
+                },
+                "vdop": {
+                    "required": false
+                },
+                "pdop": {
+                    "required": false
+                },
+                "ageofdgpsd": {
+                    "required": false
+                },
+                "dgpsid": {
+                    "required": false,
+                    "type": "float(9,0)"
+                },
+                "time2": {
+                    "required": false,
+                    "type": "string"
+                },
+                "user": {
+                    "required": false,
+                    "type": "string"
+                },
+                "appareil": {
+                    "required": false,
+                    "type": "string"
+                },
+                "nsegment": {
+                    "required": false
+                },
+                "nomzip": {
+                    "required": false,
+                    "type": "string"
+                },
+                "limtdc": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "import_photos": {
+            "index": "OGR_FID",
+            "fields": [
+                "OGR_FID",
+                "SHAPE",
+                "filename",
+                "date and t",
+                "camera man",
+                "latitude",
+                "longitude",
+                "gps direct",
+                "lien_photo",
+                "picture",
+                "tkid",
+                "locality",
+                "area",
+                "country",
+                "region"
+            ],
+            "field": {
+                "OGR_FID": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "SHAPE": {
+                    "required": true,
+                    "type": "geo"
+                },
+                "filename": {
+                    "required": false,
+                    "type": "string"
+                },
+                "date and t": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "camera man": {
+                    "required": false,
+                    "type": "string"
+                },
+                "latitude": {
+                    "required": false
+                },
+                "longitude": {
+                    "required": false
+                },
+                "gps direct": {
+                    "required": false,
+                    "type": "string"
+                },
+                "lien_photo": {
+                    "required": false,
+                    "type": "string"
+                },
+                "picture": {
+                    "required": false,
+                    "type": "text"
+                },
+                "tkid": {
+                    "required": false,
+                    "type": "string"
+                },
+                "locality": {
+                    "required": false,
+                    "type": "string"
+                },
+                "area": {
+                    "required": false,
+                    "type": "string"
+                },
+                "country": {
+                    "required": false,
+                    "type": "string"
+                },
+                "region": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "import_points": {
+            "index": "OGR_FID",
+            "fields": [
+                "OGR_FID",
+                "SHAPE",
+                "track_fid",
+                "track_seg_",
+                "track_se_1",
+                "ele",
+                "time",
+                "magvar",
+                "geoidheigh",
+                "name",
+                "cmt",
+                "desc",
+                "src",
+                "link1_href",
+                "link1_text",
+                "link1_type",
+                "link2_href",
+                "link2_text",
+                "link2_type",
+                "sym",
+                "type",
+                "fix",
+                "sat",
+                "hdop",
+                "vdop",
+                "pdop",
+                "ageofdgpsd",
+                "dgpsid",
+                "time2",
+                "tkid",
+                "segment",
+                "limtdc",
+                "nsegment"
+            ],
+            "field": {
+                "OGR_FID": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "SHAPE": {
+                    "required": true,
+                    "type": "geo"
+                },
+                "track_fid": {
+                    "required": false,
+                    "type": "float(10,0)"
+                },
+                "track_seg_": {
+                    "required": false,
+                    "type": "float(10,0)"
+                },
+                "track_se_1": {
+                    "required": false,
+                    "type": "float(10,0)"
+                },
+                "ele": {
+                    "required": false
+                },
+                "time": {
+                    "required": false,
+                    "type": "date"
+                },
+                "magvar": {
+                    "required": false
+                },
+                "geoidheigh": {
+                    "required": false
+                },
+                "name": {
+                    "required": false,
+                    "type": "string"
+                },
+                "cmt": {
+                    "required": false,
+                    "type": "string"
+                },
+                "desc": {
+                    "required": false,
+                    "type": "string"
+                },
+                "src": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link1_href": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link1_text": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link1_type": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link2_href": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link2_text": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link2_type": {
+                    "required": false,
+                    "type": "string"
+                },
+                "sym": {
+                    "required": false,
+                    "type": "string"
+                },
+                "type": {
+                    "required": false,
+                    "type": "string"
+                },
+                "fix": {
+                    "required": false,
+                    "type": "string"
+                },
+                "sat": {
+                    "required": false,
+                    "type": "float(10,0)"
+                },
+                "hdop": {
+                    "required": false
+                },
+                "vdop": {
+                    "required": false
+                },
+                "pdop": {
+                    "required": false
+                },
+                "ageofdgpsd": {
+                    "required": false
+                },
+                "dgpsid": {
+                    "required": false,
+                    "type": "float(10,0)"
+                },
+                "time2": {
+                    "required": false,
+                    "type": "string"
+                },
+                "tkid": {
+                    "required": false,
+                    "type": "string"
+                },
+                "segment": {
+                    "required": false,
+                    "type": "int"
+                },
+                "limtdc": {
+                    "required": false,
+                    "type": "string"
+                },
+                "nsegment": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "import_segments": {
+            "index": "OGR_FID",
+            "fields": [
+                "OGR_FID",
+                "SHAPE",
+                "id",
+                "annee",
+                "mois",
+                "jour",
+                "heure",
+                "carto",
+                "user",
+                "apparei",
+                "code_li",
+                "tkid",
+                "locality",
+                "area",
+                "region",
+                "country",
+                "status",
+                "lang"
+            ],
+            "field": {
+                "OGR_FID": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "SHAPE": {
+                    "required": true,
+                    "type": "geo"
+                },
+                "id": {
+                    "required": false,
+                    "type": "int"
+                },
+                "annee": {
+                    "required": false,
+                    "type": "int"
+                },
+                "mois": {
+                    "required": false,
+                    "type": "int"
+                },
+                "jour": {
+                    "required": false,
+                    "type": "int"
+                },
+                "heure": {
+                    "required": false,
+                    "type": "string"
+                },
+                "carto": {
+                    "required": false,
+                    "type": "string"
+                },
+                "user": {
+                    "required": false,
+                    "type": "string"
+                },
+                "apparei": {
+                    "required": false,
+                    "type": "string"
+                },
+                "code_li": {
+                    "required": false,
+                    "type": "string"
+                },
+                "tkid": {
+                    "required": false,
+                    "type": "string"
+                },
+                "locality": {
+                    "required": false,
+                    "type": "string"
+                },
+                "area": {
+                    "required": false,
+                    "type": "string"
+                },
+                "region": {
+                    "required": false,
+                    "type": "string"
+                },
+                "country": {
+                    "required": false,
+                    "type": "string"
+                },
+                "status": {
+                    "required": false,
+                    "type": "int",
+                    "default": "1"
+                },
+                "lang": {
+                    "required": false,
+                    "type": "string",
+                    "default": "?"
+                }
+            }
+        },
+        "rivages_photo": {
+            "index": "OGR_FID",
+            "fields": [
+                "OGR_FID",
+                "SHAPE",
+                "filename",
+                "date and t",
+                "camera man",
+                "latitude",
+                "longitude",
+                "gps direct",
+                "lien_photo"
+            ],
+            "field": {
+                "OGR_FID": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "SHAPE": {
+                    "required": true,
+                    "type": "geo"
+                },
+                "filename": {
+                    "required": false,
+                    "type": "string"
+                },
+                "date and t": {
+                    "required": false,
+                    "type": "string"
+                },
+                "camera man": {
+                    "required": false,
+                    "type": "string"
+                },
+                "latitude": {
+                    "required": false
+                },
+                "longitude": {
+                    "required": false
+                },
+                "gps direct": {
+                    "required": false,
+                    "type": "string"
+                },
+                "lien_photo": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "rivages_points": {
+            "index": "OGR_FID",
+            "fields": [
+                "OGR_FID",
+                "SHAPE",
+                "track_fid",
+                "track_seg_",
+                "track_se_1",
+                "ele",
+                "time",
+                "magvar",
+                "geoidheigh",
+                "name",
+                "cmt",
+                "desc",
+                "src",
+                "link1_href",
+                "link1_text",
+                "link1_type",
+                "link2_href",
+                "link2_text",
+                "link2_type",
+                "sym",
+                "type",
+                "fix",
+                "sat",
+                "hdop",
+                "vdop",
+                "pdop",
+                "ageofdgpsd",
+                "dgpsid",
+                "time2",
+                "user",
+                "appareil",
+                "nsegment",
+                "nomzip",
+                "limtdc"
+            ],
+            "field": {
+                "OGR_FID": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "SHAPE": {
+                    "required": true,
+                    "type": "geo"
+                },
+                "track_fid": {
+                    "required": false,
+                    "type": "float(9,0)"
+                },
+                "track_seg_": {
+                    "required": false,
+                    "type": "float(9,0)"
+                },
+                "track_se_1": {
+                    "required": false,
+                    "type": "float(9,0)"
+                },
+                "ele": {
+                    "required": false
+                },
+                "time": {
+                    "required": false,
+                    "type": "string"
+                },
+                "magvar": {
+                    "required": false
+                },
+                "geoidheigh": {
+                    "required": false
+                },
+                "name": {
+                    "required": false,
+                    "type": "string"
+                },
+                "cmt": {
+                    "required": false,
+                    "type": "string"
+                },
+                "desc": {
+                    "required": false,
+                    "type": "string"
+                },
+                "src": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link1_href": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link1_text": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link1_type": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link2_href": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link2_text": {
+                    "required": false,
+                    "type": "string"
+                },
+                "link2_type": {
+                    "required": false,
+                    "type": "string"
+                },
+                "sym": {
+                    "required": false,
+                    "type": "string"
+                },
+                "type": {
+                    "required": false,
+                    "type": "string"
+                },
+                "fix": {
+                    "required": false,
+                    "type": "string"
+                },
+                "sat": {
+                    "required": false,
+                    "type": "float(9,0)"
+                },
+                "hdop": {
+                    "required": false
+                },
+                "vdop": {
+                    "required": false
+                },
+                "pdop": {
+                    "required": false
+                },
+                "ageofdgpsd": {
+                    "required": false
+                },
+                "dgpsid": {
+                    "required": false,
+                    "type": "float(9,0)"
+                },
+                "time2": {
+                    "required": false,
+                    "type": "string"
+                },
+                "user": {
+                    "required": false,
+                    "type": "string"
+                },
+                "appareil": {
+                    "required": false,
+                    "type": "string"
+                },
+                "nsegment": {
+                    "required": false
+                },
+                "nomzip": {
+                    "required": false,
+                    "type": "string"
+                },
+                "limtdc": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "rivages_segments": {
+            "index": "OGR_FID",
+            "fields": [
+                "OGR_FID",
+                "SHAPE",
+                "id",
+                "annee",
+                "mois",
+                "jour",
+                "heure",
+                "carto",
+                "user",
+                "apparei",
+                "code_li"
+            ],
+            "field": {
+                "OGR_FID": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "SHAPE": {
+                    "required": true,
+                    "type": "geo"
+                },
+                "id": {
+                    "required": false
+                },
+                "annee": {
+                    "required": false,
+                    "type": "string"
+                },
+                "mois": {
+                    "required": false,
+                    "type": "string"
+                },
+                "jour": {
+                    "required": false,
+                    "type": "string"
+                },
+                "heure": {
+                    "required": false,
+                    "type": "string"
+                },
+                "carto": {
+                    "required": false,
+                    "type": "string"
+                },
+                "user": {
+                    "required": false,
+                    "type": "string"
+                },
+                "apparei": {
+                    "required": false,
+                    "type": "string"
+                },
+                "code_li": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "save_photos": {
+            "index": "OGR_FID",
+            "fields": [
+                "OGR_FID",
+                "SHAPE",
+                "filename",
+                "date and t",
+                "camera man",
+                "latitude",
+                "longitude",
+                "gps direct",
+                "lien_photo",
+                "picture",
+                "tkid",
+                "locality",
+                "area",
+                "country",
+                "region"
+            ],
+            "field": {
+                "OGR_FID": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "SHAPE": {
+                    "required": true,
+                    "type": "geo"
+                },
+                "filename": {
+                    "required": false,
+                    "type": "string"
+                },
+                "date and t": {
+                    "required": false,
+                    "type": "string"
+                },
+                "camera man": {
+                    "required": false,
+                    "type": "string"
+                },
+                "latitude": {
+                    "required": false
+                },
+                "longitude": {
+                    "required": false
+                },
+                "gps direct": {
+                    "required": false,
+                    "type": "string"
+                },
+                "lien_photo": {
+                    "required": false,
+                    "type": "string"
+                },
+                "picture": {
+                    "required": false,
+                    "type": "text"
+                },
+                "tkid": {
+                    "required": false,
+                    "type": "string"
+                },
+                "locality": {
+                    "required": false,
+                    "type": "string"
+                },
+                "area": {
+                    "required": false,
+                    "type": "string"
+                },
+                "country": {
+                    "required": false,
+                    "type": "string"
+                },
+                "region": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "tokens": {
+            "index": "tkid",
+            "fields": [
+                "tkid",
+                "imei",
+                "md5",
+                "name",
+                "datecode",
+                "processed"
+            ],
+            "field": {
+                "tkid": {
+                    "required": true,
+                    "type": "string"
+                },
+                "imei": {
+                    "required": false,
+                    "type": "string"
+                },
+                "md5": {
+                    "required": false,
+                    "type": "string"
+                },
+                "name": {
+                    "required": false,
+                    "type": "string"
+                },
+                "datecode": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "processed": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "track_points": {
+            "index": "OGR_FID",
+            "fields": [
+                "OGR_FID",
+                "SHAPE",
+                "track_fid",
+                "track_seg_id",
+                "track_seg_point_id",
+                "ele",
+                "time",
+                "magvar",
+                "geoidheight",
+                "name",
+                "cmt",
+                "desc",
+                "src",
+                "link1_href",
+                "link1_text",
+                "link1_type",
+                "link2_href",
+                "link2_text",
+                "link2_type",
+                "sym",
+                "type",
+                "fix",
+                "sat",
+                "hdop",
+                "vdop",
+                "pdop",
+                "ageofdgpsdata",
+                "dgpsid"
+            ],
+            "field": {
+                "OGR_FID": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "SHAPE": {
+                    "required": true,
+                    "type": "geo"
+                },
+                "track_fid": {
+                    "required": false,
+                    "type": "int"
+                },
+                "track_seg_id": {
+                    "required": false,
+                    "type": "int"
+                },
+                "track_seg_point_id": {
+                    "required": false,
+                    "type": "int"
+                },
+                "ele": {
+                    "required": false
+                },
+                "time": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "magvar": {
+                    "required": false
+                },
+                "geoidheight": {
+                    "required": false
+                },
+                "name": {
+                    "required": false,
+                    "type": "text"
+                },
+                "cmt": {
+                    "required": false,
+                    "type": "text"
+                },
+                "desc": {
+                    "required": false,
+                    "type": "text"
+                },
+                "src": {
+                    "required": false,
+                    "type": "text"
+                },
+                "link1_href": {
+                    "required": false,
+                    "type": "text"
+                },
+                "link1_text": {
+                    "required": false,
+                    "type": "text"
+                },
+                "link1_type": {
+                    "required": false,
+                    "type": "text"
+                },
+                "link2_href": {
+                    "required": false,
+                    "type": "text"
+                },
+                "link2_text": {
+                    "required": false,
+                    "type": "text"
+                },
+                "link2_type": {
+                    "required": false,
+                    "type": "text"
+                },
+                "sym": {
+                    "required": false,
+                    "type": "text"
+                },
+                "type": {
+                    "required": false,
+                    "type": "text"
+                },
+                "fix": {
+                    "required": false,
+                    "type": "text"
+                },
+                "sat": {
+                    "required": false,
+                    "type": "int"
+                },
+                "hdop": {
+                    "required": false
+                },
+                "vdop": {
+                    "required": false
+                },
+                "pdop": {
+                    "required": false
+                },
+                "ageofdgpsdata": {
+                    "required": false
+                },
+                "dgpsid": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "tracks": {
+            "index": "OGR_FID",
+            "fields": [
+                "OGR_FID",
+                "SHAPE",
+                "name",
+                "cmt",
+                "desc",
+                "src",
+                "link1_href",
+                "link1_text",
+                "link1_type",
+                "link2_href",
+                "link2_text",
+                "link2_type",
+                "number",
+                "type"
+            ],
+            "field": {
+                "OGR_FID": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "SHAPE": {
+                    "required": true,
+                    "type": "geo"
+                },
+                "name": {
+                    "required": false,
+                    "type": "text"
+                },
+                "cmt": {
+                    "required": false,
+                    "type": "text"
+                },
+                "desc": {
+                    "required": false,
+                    "type": "text"
+                },
+                "src": {
+                    "required": false,
+                    "type": "text"
+                },
+                "link1_href": {
+                    "required": false,
+                    "type": "text"
+                },
+                "link1_text": {
+                    "required": false,
+                    "type": "text"
+                },
+                "link1_type": {
+                    "required": false,
+                    "type": "text"
+                },
+                "link2_href": {
+                    "required": false,
+                    "type": "text"
+                },
+                "link2_text": {
+                    "required": false,
+                    "type": "text"
+                },
+                "link2_type": {
+                    "required": false,
+                    "type": "text"
+                },
+                "number": {
+                    "required": false,
+                    "type": "int"
+                },
+                "type": {
+                    "required": false,
+                    "type": "text"
+                }
+            }
+        }
+    }
+}

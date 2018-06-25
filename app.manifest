@@ -76,8 +76,7 @@
             ],
             "res": [
                 "@omneedia/ajax/libs/animate.css/3.5.2/animate.css",
-                "@omneedia/omneedia/{version}/res/webapp.css",
-                "Contents/Resources/webapp.css"
+                "@omneedia/omneedia/{version}/res/webapp.css"
             ],
             "i18n": [
                 "@omneedia/omneedia/{version}/libs/Date/date-{lang}.js",

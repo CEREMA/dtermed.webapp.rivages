@@ -1,0 +1,3208 @@
+{
+    "db": "bpclight",
+    "tables": [
+        "DOMAINES",
+        "SOUS_DOMAINES",
+        "TRAVAILLE",
+        "accents",
+        "accounts",
+        "activites",
+        "adresses",
+        "ageaut",
+        "ageautpers",
+        "agecode",
+        "ageetat",
+        "agents",
+        "ageperm",
+        "agepiece",
+        "agequip",
+        "agerol",
+        "annexes",
+        "batiments",
+        "catgrad",
+        "catperm",
+        "catpiece",
+        "contacts",
+        "db_interim",
+        "descripchamp",
+        "docs",
+        "droit_consult",
+        "equipements",
+        "etablissements",
+        "familles",
+        "feries",
+        "gestion_droits",
+        "grades",
+        "hierarchie",
+        "historic",
+        "interim",
+        "medic_cat",
+        "medic_dossiers",
+        "medic_gen",
+        "medic_rdv",
+        "medic_type",
+        "mela",
+        "mele",
+        "mels",
+        "melu",
+        "melv",
+        "monblob",
+        "motif",
+        "mpaagent",
+        "mpalolf",
+        "param",
+        "param_droits",
+        "photo",
+        "position",
+        "recapitulatif",
+        "rolconsult",
+        "roles",
+        "sauvage",
+        "services",
+        "situadm",
+        "societes",
+        "srhmel",
+        "subdis",
+        "trombi",
+        "type_formation",
+        "unites",
+        "useannex",
+        "users",
+        "vehassu",
+        "vehmark",
+        "vehmod",
+        "versions"
+    ],
+    "table": {
+        "DOMAINES": {
+            "index": "ID_DOMAINE",
+            "fields": [
+                "ID_DOMAINE",
+                "NOM_DOMAINE"
+            ],
+            "field": {
+                "ID_DOMAINE": {
+                    "required": true,
+                    "type": "float(3,0)"
+                },
+                "NOM_DOMAINE": {
+                    "required": true,
+                    "type": "int"
+                }
+            }
+        },
+        "SOUS_DOMAINES": {
+            "index": "ID_SOUS_DOMAINES",
+            "fields": [
+                "ID_SOUS_DOMAINES",
+                "ID_DOMAINE",
+                "NOM_SOUS_DOMAINES"
+            ],
+            "field": {
+                "ID_SOUS_DOMAINES": {
+                    "required": true,
+                    "type": "float(3,0)"
+                },
+                "ID_DOMAINE": {
+                    "required": true,
+                    "type": "float(3,0)"
+                },
+                "NOM_SOUS_DOMAINES": {
+                    "required": true,
+                    "type": "int"
+                }
+            }
+        },
+        "TRAVAILLE": {
+            "index": "ID_SOUS_DOMAINES",
+            "fields": [
+                "ID_SOUS_DOMAINES",
+                "ID_MATRICULE"
+            ],
+            "field": {
+                "ID_SOUS_DOMAINES": {
+                    "required": true,
+                    "type": "float(3,0)"
+                },
+                "ID_MATRICULE": {
+                    "required": true,
+                    "type": "int"
+                }
+            }
+        },
+        "accents": {
+            "index": "Kacc",
+            "fields": [
+                "Kacc",
+                "LibSAcc",
+                "LibAcc",
+                "Verrou"
+            ],
+            "field": {
+                "Kacc": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "LibSAcc": {
+                    "required": false,
+                    "type": "string"
+                },
+                "LibAcc": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "accounts": {
+            "index": "cid",
+            "fields": [
+                "cid",
+                "login",
+                "kage"
+            ],
+            "field": {
+                "cid": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "login": {
+                    "required": true,
+                    "type": "string"
+                },
+                "kage": {
+                    "required": true,
+                    "type": "int"
+                }
+            }
+        },
+        "activites": {
+            "index": "Kact",
+            "fields": [
+                "Kact",
+                "Kage",
+                "Kann",
+                "LibAct",
+                "ActLie",
+                "Verrou"
+            ],
+            "field": {
+                "Kact": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kage": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Kann": {
+                    "required": true,
+                    "type": "int"
+                },
+                "LibAct": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ActLie": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "adresses": {
+            "index": "Kadr",
+            "fields": [
+                "Kadr",
+                "Kpos",
+                "Kdep",
+                "Kpay",
+                "Adresse",
+                "Perso",
+                "Type",
+                "Verrou",
+                "Date_derniere_modif"
+            ],
+            "field": {
+                "Kadr": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kpos": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kdep": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kpay": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Adresse": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Perso": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Type": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Date_derniere_modif": {
+                    "required": false,
+                    "type": "datetime"
+                }
+            }
+        },
+        "ageaut": {
+            "index": "Kaat",
+            "fields": [
+                "Kaat",
+                "Kpie",
+                "Ksig",
+                "DatAutV",
+                "DatDebV",
+                "DatFinV",
+                "NumAut",
+                "Verrou"
+            ],
+            "field": {
+                "Kaat": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kpie": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Ksig": {
+                    "required": true,
+                    "type": "int"
+                },
+                "DatAutV": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "DatDebV": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "DatFinV": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "NumAut": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "ageautpers": {
+            "index": "Kaap",
+            "fields": [
+                "Kaap",
+                "Kpie",
+                "Kvmk",
+                "Kvmd",
+                "Kvas",
+                "Ksig",
+                "DatAut",
+                "Ponct",
+                "Immat",
+                "NumPol",
+                "Zone",
+                "KmAut",
+                "KmAdd",
+                "DatDeb",
+                "DatFin",
+                "Verrou"
+            ],
+            "field": {
+                "Kaap": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kpie": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Kvmk": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kvmd": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kvas": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Ksig": {
+                    "required": true,
+                    "type": "int"
+                },
+                "DatAut": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "Ponct": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Immat": {
+                    "required": false,
+                    "type": "string"
+                },
+                "NumPol": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Zone": {
+                    "required": false,
+                    "type": "int"
+                },
+                "KmAut": {
+                    "required": false
+                },
+                "KmAdd": {
+                    "required": false
+                },
+                "DatDeb": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "DatFin": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "agecode": {
+            "index": "Kcod",
+            "fields": [
+                "Kcod",
+                "Kage",
+                "CodConf",
+                "CodChauf",
+                "Verrou"
+            ],
+            "field": {
+                "Kcod": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kage": {
+                    "required": true,
+                    "type": "int"
+                },
+                "CodConf": {
+                    "required": false,
+                    "type": "string"
+                },
+                "CodChauf": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "ageetat": {
+            "index": "Keta",
+            "fields": [
+                "Keta",
+                "Kpst",
+                "Kage",
+                "Ketsnew",
+                "Kuninew",
+                "Ksubnew",
+                "Ksernew",
+                "Ketsex",
+                "Kuniex",
+                "Ksubex",
+                "Kserex",
+                "DatCre",
+                "Arrivee",
+                "Motif",
+                "DatEta",
+                "DatCPA",
+                "DatCFA",
+                "DatRet",
+                "PosFutur",
+                "Verrou"
+            ],
+            "field": {
+                "Keta": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kpst": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Kage": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Ketsnew": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kuninew": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Ksubnew": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Ksernew": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Ketsex": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kuniex": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Ksubex": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kserex": {
+                    "required": false,
+                    "type": "int"
+                },
+                "DatCre": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "Arrivee": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Motif": {
+                    "required": false,
+                    "type": "string"
+                },
+                "DatEta": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "DatCPA": {
+                    "required": false,
+                    "type": "date"
+                },
+                "DatCFA": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "DatRet": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "PosFutur": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "agents": {
+            "index": "Kage",
+            "fields": [
+                "Kage",
+                "Ksub",
+                "Kuni",
+                "Kser",
+                "Kbat",
+                "Kgra",
+                "Kbur",
+                "Kres",
+                "Ksec",
+                "Nom",
+                "Prenom",
+                "Matri",
+                "DatCre",
+                "DatOuv",
+                "DatMod",
+                "DatClo",
+                "HorSect",
+                "CodHie",
+                "CodHor",
+                "LibHor",
+                "Telephone",
+                "Poste",
+                "Fax",
+                "Portable",
+                "Bureau",
+                "RoleDeta",
+                "DatMaj",
+                "DatNai",
+                "VilNai",
+                "DepNai",
+                "NomPre",
+                "Actif",
+                "IneTP",
+                "HSLabo",
+                "MissioLabo",
+                "LogUse",
+                "NumImmo",
+                "INSEE",
+                "Circe",
+                "PaysNai",
+                "Signat",
+                "Temptation",
+                "Verrou",
+                "NumautCond",
+                "Autorise",
+                "INM",
+                "AgGesper",
+                "AgRe",
+                "AgRisques",
+                "Ksec2",
+                "REHUCIT",
+                "libelle_poste",
+                "dossier_d",
+                "dossier_r",
+                "libelle_doc",
+                "_BLOB"
+            ],
+            "field": {
+                "Kage": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Ksub": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kuni": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kser": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kbat": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kgra": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kbur": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kres": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Ksec": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Nom": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Prenom": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Matri": {
+                    "required": false,
+                    "type": "string"
+                },
+                "DatCre": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "DatOuv": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "DatMod": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "DatClo": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "HorSect": {
+                    "required": false,
+                    "type": "string"
+                },
+                "CodHie": {
+                    "required": false,
+                    "type": "int"
+                },
+                "CodHor": {
+                    "required": false,
+                    "type": "string"
+                },
+                "LibHor": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Telephone": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Poste": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Fax": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Portable": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Bureau": {
+                    "required": false,
+                    "type": "string"
+                },
+                "RoleDeta": {
+                    "required": false,
+                    "type": "text"
+                },
+                "DatMaj": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "DatNai": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "VilNai": {
+                    "required": false,
+                    "type": "string"
+                },
+                "DepNai": {
+                    "required": false,
+                    "type": "string"
+                },
+                "NomPre": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Actif": {
+                    "required": false,
+                    "type": "int",
+                    "default": "1"
+                },
+                "IneTP": {
+                    "required": false,
+                    "type": "int"
+                },
+                "HSLabo": {
+                    "required": false,
+                    "type": "int"
+                },
+                "MissioLabo": {
+                    "required": false,
+                    "type": "int"
+                },
+                "LogUse": {
+                    "required": false,
+                    "type": "string"
+                },
+                "NumImmo": {
+                    "required": false,
+                    "type": "string"
+                },
+                "INSEE": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Circe": {
+                    "required": false,
+                    "type": "int"
+                },
+                "PaysNai": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Signat": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Temptation": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "string"
+                },
+                "NumautCond": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Autorise": {
+                    "required": false,
+                    "type": "int"
+                },
+                "INM": {
+                    "required": false,
+                    "type": "char(5)"
+                },
+                "AgGesper": {
+                    "required": false,
+                    "type": "string"
+                },
+                "AgRe": {
+                    "required": false,
+                    "type": "string"
+                },
+                "AgRisques": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Ksec2": {
+                    "required": false,
+                    "type": "int"
+                },
+                "REHUCIT": {
+                    "required": false,
+                    "type": "string"
+                },
+                "libelle_poste": {
+                    "required": false,
+                    "type": "text"
+                },
+                "dossier_d": {
+                    "required": false,
+                    "type": "int"
+                },
+                "dossier_r": {
+                    "required": false,
+                    "type": "int"
+                },
+                "libelle_doc": {
+                    "required": false,
+                    "type": "blob"
+                },
+                "_BLOB": {
+                    "required": false,
+                    "type": "text"
+                }
+            }
+        },
+        "ageperm": {
+            "index": "Kape",
+            "fields": [
+                "Kape",
+                "Kcpe",
+                "Kage",
+                "NumPerm",
+                "DatObt",
+                "Verrou"
+            ],
+            "field": {
+                "Kape": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kcpe": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kage": {
+                    "required": false,
+                    "type": "int"
+                },
+                "NumPerm": {
+                    "required": false,
+                    "type": "string"
+                },
+                "DatObt": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "agepiece": {
+            "index": "Kpie",
+            "fields": [
+                "Kpie",
+                "Kcpe",
+                "Kage",
+                "TypPie",
+                "NumPie",
+                "DatPie",
+                "DatVal",
+                "SignPie",
+                "Verrou"
+            ],
+            "field": {
+                "Kpie": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kcpe": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kage": {
+                    "required": true,
+                    "type": "int"
+                },
+                "TypPie": {
+                    "required": true,
+                    "type": "int"
+                },
+                "NumPie": {
+                    "required": false,
+                    "type": "string"
+                },
+                "DatPie": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "DatVal": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "SignPie": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "agequip": {
+            "index": "eid",
+            "fields": [
+                "eid",
+                "kage",
+                "equip",
+                "comments"
+            ],
+            "field": {
+                "eid": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "kage": {
+                    "required": true,
+                    "type": "int"
+                },
+                "equip": {
+                    "required": true,
+                    "type": "string"
+                },
+                "comments": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "agerol": {
+            "index": "Kagr",
+            "fields": [
+                "Kagr",
+                "Kage",
+                "Krol",
+                "Priorite",
+                "Verrou"
+            ],
+            "field": {
+                "Kagr": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kage": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Krol": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Priorite": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "annexes": {
+            "index": "Kann",
+            "fields": [
+                "Kann",
+                "Krol",
+                "LibAnnc",
+                "LibAnn",
+                "Lie",
+                "Verrou"
+            ],
+            "field": {
+                "Kann": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Krol": {
+                    "required": false,
+                    "type": "int"
+                },
+                "LibAnnc": {
+                    "required": false,
+                    "type": "string"
+                },
+                "LibAnn": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Lie": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "batiments": {
+            "index": "Kbat",
+            "fields": [
+                "Kbat",
+                "LibBatC",
+                "LibBat",
+                "Verrou",
+                "GPS"
+            ],
+            "field": {
+                "Kbat": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "LibBatC": {
+                    "required": false,
+                    "type": "string"
+                },
+                "LibBat": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                },
+                "GPS": {
+                    "required": true,
+                    "type": "string"
+                }
+            }
+        },
+        "catgrad": {
+            "index": "Kcgr",
+            "fields": [
+                "Kcgr",
+                "LibCgr",
+                "Verrou"
+            ],
+            "field": {
+                "Kcgr": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "LibCgr": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "catperm": {
+            "index": "Kcpe",
+            "fields": [
+                "Kcpe",
+                "CatPerm",
+                "DefPerm",
+                "Verrou"
+            ],
+            "field": {
+                "Kcpe": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "CatPerm": {
+                    "required": false,
+                    "type": "char(10)"
+                },
+                "DefPerm": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "catpiece": {
+            "index": "Kcpi",
+            "fields": [
+                "Kcpi",
+                "TypPiece",
+                "CatPiece",
+                "Verrou"
+            ],
+            "field": {
+                "Kcpi": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "TypPiece": {
+                    "required": false,
+                    "type": "int"
+                },
+                "CatPiece": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "contacts": {
+            "index": "Kcon",
+            "fields": [
+                "Kcon",
+                "Ksoc",
+                "Nom",
+                "Prenom",
+                "Mel",
+                "Telephone",
+                "Portable",
+                "Fax",
+                "Fonction",
+                "DatMaj",
+                "Verrou"
+            ],
+            "field": {
+                "Kcon": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Ksoc": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Nom": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Prenom": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Mel": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Telephone": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Portable": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Fax": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Fonction": {
+                    "required": false,
+                    "type": "string"
+                },
+                "DatMaj": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "db_interim": {
+            "index": "PID",
+            "fields": [
+                "PID",
+                "Agent",
+                "Interim",
+                "Final",
+                "D0",
+                "D1",
+                "VISA1",
+                "VISA2",
+                "VALID",
+                "UID"
+            ],
+            "field": {
+                "PID": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Agent": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Interim": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Final": {
+                    "required": false,
+                    "type": "int"
+                },
+                "D0": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "D1": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "VISA1": {
+                    "required": false,
+                    "type": "int"
+                },
+                "VISA2": {
+                    "required": false,
+                    "type": "int"
+                },
+                "VALID": {
+                    "required": false,
+                    "type": "int"
+                },
+                "UID": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "descripchamp": {
+            "index": "Kdes",
+            "fields": [
+                "Kdes",
+                "name",
+                "haut",
+                "gauche",
+                "largeur",
+                "hauteur",
+                "panel",
+                "caption",
+                "Descrip",
+                "indice"
+            ],
+            "field": {
+                "Kdes": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "name": {
+                    "required": false,
+                    "type": "string"
+                },
+                "haut": {
+                    "required": false,
+                    "type": "int"
+                },
+                "gauche": {
+                    "required": false,
+                    "type": "int"
+                },
+                "largeur": {
+                    "required": false,
+                    "type": "int"
+                },
+                "hauteur": {
+                    "required": false,
+                    "type": "int"
+                },
+                "panel": {
+                    "required": false,
+                    "type": "string"
+                },
+                "caption": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Descrip": {
+                    "required": false,
+                    "type": "text"
+                },
+                "indice": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "docs": {
+            "index": "docId",
+            "fields": [
+                "docId",
+                "_blob",
+                "filename",
+                "type",
+                "size"
+            ],
+            "field": {
+                "docId": {
+                    "required": true,
+                    "type": "string",
+                    "default": "NO"
+                },
+                "_blob": {
+                    "required": false,
+                    "type": "text"
+                },
+                "filename": {
+                    "required": false,
+                    "type": "string"
+                },
+                "type": {
+                    "required": false,
+                    "type": "string"
+                },
+                "size": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "droit_consult": {
+            "index": "KConsult",
+            "fields": [
+                "KConsult",
+                "CodeConsult",
+                "LibConsultC",
+                "LibConsult"
+            ],
+            "field": {
+                "KConsult": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "CodeConsult": {
+                    "required": false,
+                    "type": "int"
+                },
+                "LibConsultC": {
+                    "required": false,
+                    "type": "char(50)"
+                },
+                "LibConsult": {
+                    "required": false,
+                    "type": "char(50)"
+                }
+            }
+        },
+        "equipements": {
+            "index": "id",
+            "fields": [
+                "id",
+                "equip"
+            ],
+            "field": {
+                "id": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "equip": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "etablissements": {
+            "index": "Kets",
+            "fields": [
+                "Kets",
+                "Kadr",
+                "LibEts",
+                "LibEtsC",
+                "Obs",
+                "etsGESPER",
+                "Archive",
+                "responsable"
+            ],
+            "field": {
+                "Kets": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kadr": {
+                    "required": false,
+                    "type": "int"
+                },
+                "LibEts": {
+                    "required": false,
+                    "type": "text"
+                },
+                "LibEtsC": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Obs": {
+                    "required": false,
+                    "type": "text"
+                },
+                "etsGESPER": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Archive": {
+                    "required": true,
+                    "type": "int"
+                },
+                "responsable": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "familles": {
+            "index": "Kfam",
+            "fields": [
+                "Kfam",
+                "LibFam",
+                "Verrou"
+            ],
+            "field": {
+                "Kfam": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "LibFam": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "feries": {
+            "index": "Kfer",
+            "fields": [
+                "Kfer",
+                "DateFerie",
+                "LibFerie",
+                "RTT",
+                "Verrou"
+            ],
+            "field": {
+                "Kfer": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "DateFerie": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "LibFerie": {
+                    "required": false,
+                    "type": "string"
+                },
+                "RTT": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "gestion_droits": {
+            "index": "Kdts",
+            "fields": [
+                "Kdts",
+                "Kage",
+                "DtValid",
+                "DtConsultation"
+            ],
+            "field": {
+                "Kdts": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kage": {
+                    "required": false,
+                    "type": "int"
+                },
+                "DtValid": {
+                    "required": false,
+                    "type": "int"
+                },
+                "DtConsultation": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "grades": {
+            "index": "Kgra",
+            "fields": [
+                "Kgra",
+                "Kcgr",
+                "LibGrac",
+                "LibGra",
+                "Gesper",
+                "Statut",
+                "CatFP",
+                "TechAdm",
+                "HSDroit",
+                "Verrou"
+            ],
+            "field": {
+                "Kgra": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kcgr": {
+                    "required": true,
+                    "type": "int"
+                },
+                "LibGrac": {
+                    "required": false,
+                    "type": "string"
+                },
+                "LibGra": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Gesper": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Statut": {
+                    "required": false,
+                    "type": "string"
+                },
+                "CatFP": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TechAdm": {
+                    "required": false,
+                    "type": "string"
+                },
+                "HSDroit": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "hierarchie": {
+            "index": "Khie",
+            "fields": [
+                "Khie",
+                "Kuni",
+                "Ksub",
+                "Kser",
+                "Kage",
+                "Krol",
+                "Verrou"
+            ],
+            "field": {
+                "Khie": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kuni": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Ksub": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kser": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Kage": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Krol": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "historic": {
+            "index": "Khis",
+            "fields": [
+                "Khis",
+                "LogUse",
+                "LibHis",
+                "LibSubc",
+                "DatExe",
+                "TypExe",
+                "Verrou"
+            ],
+            "field": {
+                "Khis": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "LogUse": {
+                    "required": false,
+                    "type": "string"
+                },
+                "LibHis": {
+                    "required": false,
+                    "type": "string"
+                },
+                "LibSubc": {
+                    "required": false,
+                    "type": "string"
+                },
+                "DatExe": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "TypExe": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "interim": {
+            "index": "PID",
+            "fields": [
+                "PID",
+                "AGENT",
+                "V1",
+                "V2"
+            ],
+            "field": {
+                "PID": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "AGENT": {
+                    "required": false,
+                    "type": "int"
+                },
+                "V1": {
+                    "required": false,
+                    "type": "int"
+                },
+                "V2": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "medic_cat": {
+            "index": "id",
+            "fields": [
+                "id",
+                "cat"
+            ],
+            "field": {
+                "id": {
+                    "required": true,
+                    "type": "int"
+                },
+                "cat": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "medic_dossiers": {
+            "index": "id",
+            "fields": [
+                "id",
+                "kage",
+                "poste_actuel",
+                "traitements",
+                "tabac",
+                "alcool",
+                "sport",
+                "orientations",
+                "conclusions",
+                "date",
+                "type",
+                "cat",
+                "Taille",
+                "Poids",
+                "Pouls",
+                "TA",
+                "TA_ORD",
+                "TA_ORG",
+                "clinique",
+                "vaccinations",
+                "TA_CORRECTION",
+                "TA_RQ",
+                "CVF",
+                "VEMS",
+                "VEMS_CVF",
+                "DEMM",
+                "TU",
+                "TU_RESULT",
+                "TV_OD",
+                "TV_OG",
+                "TV_CORRECTION",
+                "TV_RQ",
+                "TV_ANOMALIE",
+                "TV_STIGM",
+                "commentaires",
+                "_clinique"
+            ],
+            "field": {
+                "id": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "kage": {
+                    "required": true,
+                    "type": "int",
+                    "default": "-1"
+                },
+                "poste_actuel": {
+                    "required": false,
+                    "type": "text"
+                },
+                "traitements": {
+                    "required": false,
+                    "type": "text"
+                },
+                "tabac": {
+                    "required": false,
+                    "type": "string",
+                    "default": "0"
+                },
+                "alcool": {
+                    "required": false,
+                    "type": "string",
+                    "default": "0"
+                },
+                "sport": {
+                    "required": false,
+                    "type": "string",
+                    "default": "0"
+                },
+                "orientations": {
+                    "required": false,
+                    "type": "string"
+                },
+                "conclusions": {
+                    "required": false,
+                    "type": "string"
+                },
+                "date": {
+                    "required": false,
+                    "type": "date"
+                },
+                "type": {
+                    "required": false,
+                    "type": "int"
+                },
+                "cat": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Taille": {
+                    "required": false
+                },
+                "Poids": {
+                    "required": false
+                },
+                "Pouls": {
+                    "required": false
+                },
+                "TA": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TA_ORD": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TA_ORG": {
+                    "required": false,
+                    "type": "string"
+                },
+                "clinique": {
+                    "required": false,
+                    "type": "string"
+                },
+                "vaccinations": {
+                    "required": false,
+                    "type": "text"
+                },
+                "TA_CORRECTION": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TA_RQ": {
+                    "required": false,
+                    "type": "string"
+                },
+                "CVF": {
+                    "required": false
+                },
+                "VEMS": {
+                    "required": false
+                },
+                "VEMS_CVF": {
+                    "required": false
+                },
+                "DEMM": {
+                    "required": false
+                },
+                "TU": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TU_RESULT": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TV_OD": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TV_OG": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TV_CORRECTION": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TV_RQ": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TV_ANOMALIE": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TV_STIGM": {
+                    "required": false,
+                    "type": "string"
+                },
+                "commentaires": {
+                    "required": false,
+                    "type": "text"
+                },
+                "_clinique": {
+                    "required": false,
+                    "type": "text"
+                }
+            }
+        },
+        "medic_gen": {
+            "index": "kage",
+            "fields": [
+                "kage",
+                "gen_perso",
+                "gen_family",
+                "gen_posterisque",
+                "gen_dossierrecu",
+                "gen_dossierdemande"
+            ],
+            "field": {
+                "kage": {
+                    "required": true,
+                    "type": "int"
+                },
+                "gen_perso": {
+                    "required": false,
+                    "type": "text"
+                },
+                "gen_family": {
+                    "required": false,
+                    "type": "text"
+                },
+                "gen_posterisque": {
+                    "required": false,
+                    "type": "int"
+                },
+                "gen_dossierrecu": {
+                    "required": false,
+                    "type": "int"
+                },
+                "gen_dossierdemande": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "medic_rdv": {
+            "index": "rdv_id",
+            "fields": [
+                "rdv_id",
+                "ResourceId",
+                "StartDate",
+                "EndDate",
+                "NextDate",
+                "Name",
+                "resultat",
+                "nature",
+                "kage",
+                "commentaires"
+            ],
+            "field": {
+                "rdv_id": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "ResourceId": {
+                    "required": false,
+                    "type": "int"
+                },
+                "StartDate": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "EndDate": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "NextDate": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "Name": {
+                    "required": false,
+                    "type": "string"
+                },
+                "resultat": {
+                    "required": false,
+                    "type": "int"
+                },
+                "nature": {
+                    "required": false,
+                    "type": "int"
+                },
+                "kage": {
+                    "required": false,
+                    "type": "int"
+                },
+                "commentaires": {
+                    "required": false,
+                    "type": "text"
+                }
+            }
+        },
+        "medic_type": {
+            "index": "id",
+            "fields": [
+                "id",
+                "type"
+            ],
+            "field": {
+                "id": {
+                    "required": true,
+                    "type": "int",
+                    "default": "-1"
+                },
+                "type": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "mela": {
+            "index": "Kmela",
+            "fields": [
+                "Kmela",
+                "Kage",
+                "LibMelA",
+                "Verrou"
+            ],
+            "field": {
+                "Kmela": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kage": {
+                    "required": true,
+                    "type": "int"
+                },
+                "LibMelA": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "mele": {
+            "index": "Kmele",
+            "fields": [
+                "Kmele",
+                "Kets",
+                "LibMelE"
+            ],
+            "field": {
+                "Kmele": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kets": {
+                    "required": true,
+                    "type": "int"
+                },
+                "LibMelE": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "mels": {
+            "index": "Kmels",
+            "fields": [
+                "Kmels",
+                "Ksub",
+                "LibMelS",
+                "Verrou"
+            ],
+            "field": {
+                "Kmels": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Ksub": {
+                    "required": true,
+                    "type": "int"
+                },
+                "LibMelS": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "melu": {
+            "index": "Kmelu",
+            "fields": [
+                "Kmelu",
+                "Kuni",
+                "LibMelU",
+                "Verrou"
+            ],
+            "field": {
+                "Kmelu": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kuni": {
+                    "required": true,
+                    "type": "int"
+                },
+                "LibMelU": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "melv": {
+            "index": "Kmelv",
+            "fields": [
+                "Kmelv",
+                "Kser",
+                "LibMelV",
+                "Verrou"
+            ],
+            "field": {
+                "Kmelv": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kser": {
+                    "required": true,
+                    "type": "int"
+                },
+                "LibMelV": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "monblob": {
+            "index": "id_blob",
+            "fields": [
+                "id_blob",
+                "blob"
+            ],
+            "field": {
+                "id_blob": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "blob": {
+                    "required": true,
+                    "type": "blob"
+                }
+            }
+        },
+        "motif": {
+            "index": "kmof",
+            "fields": [
+                "kmof",
+                "motif"
+            ],
+            "field": {
+                "kmof": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "motif": {
+                    "required": true,
+                    "type": "string"
+                }
+            }
+        },
+        "mpaagent": {
+            "index": "id_MPA",
+            "fields": [
+                "id_MPA",
+                "Kage",
+                "idMPALOLF",
+                "quotite_MPA",
+                "debut_MPA",
+                "fin_MPA",
+                "delete_MPA"
+            ],
+            "field": {
+                "id_MPA": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kage": {
+                    "required": true,
+                    "type": "int"
+                },
+                "idMPALOLF": {
+                    "required": false,
+                    "type": "int"
+                },
+                "quotite_MPA": {
+                    "required": false,
+                    "type": "int"
+                },
+                "debut_MPA": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "fin_MPA": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "delete_MPA": {
+                    "required": true,
+                    "type": "int"
+                }
+            }
+        },
+        "mpalolf": {
+            "index": "idMPALOLF",
+            "fields": [
+                "idMPALOLF",
+                "codeLOLF",
+                "libMission",
+                "libProgramme",
+                "libAction",
+                "libSousAction"
+            ],
+            "field": {
+                "idMPALOLF": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "codeLOLF": {
+                    "required": false,
+                    "type": "string"
+                },
+                "libMission": {
+                    "required": false,
+                    "type": "text"
+                },
+                "libProgramme": {
+                    "required": false,
+                    "type": "text"
+                },
+                "libAction": {
+                    "required": false,
+                    "type": "text"
+                },
+                "libSousAction": {
+                    "required": false,
+                    "type": "text"
+                }
+            }
+        },
+        "param": {
+            "index": "Kpar",
+            "fields": [
+                "Kpar",
+                "SauvSource",
+                "ImagesCS",
+                "ImagesWeb",
+                "PhotosCS",
+                "PhotoWeb",
+                "TSource",
+                "TUser",
+                "TBDD",
+                "TPasse",
+                "TProprio",
+                "TAcces",
+                "TServer",
+                "RSource",
+                "RUser",
+                "RBDD",
+                "RPasse",
+                "RProprio",
+                "RAcces",
+                "RServer",
+                "Verrou"
+            ],
+            "field": {
+                "Kpar": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "SauvSource": {
+                    "required": false,
+                    "type": "text"
+                },
+                "ImagesCS": {
+                    "required": false,
+                    "type": "text"
+                },
+                "ImagesWeb": {
+                    "required": false,
+                    "type": "text"
+                },
+                "PhotosCS": {
+                    "required": false,
+                    "type": "text"
+                },
+                "PhotoWeb": {
+                    "required": false,
+                    "type": "text"
+                },
+                "TSource": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TUser": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TBDD": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TPasse": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TProprio": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TAcces": {
+                    "required": false,
+                    "type": "string"
+                },
+                "TServer": {
+                    "required": false,
+                    "type": "string"
+                },
+                "RSource": {
+                    "required": false,
+                    "type": "string"
+                },
+                "RUser": {
+                    "required": false,
+                    "type": "string"
+                },
+                "RBDD": {
+                    "required": false,
+                    "type": "string"
+                },
+                "RPasse": {
+                    "required": false,
+                    "type": "string"
+                },
+                "RProprio": {
+                    "required": false,
+                    "type": "string"
+                },
+                "RAcces": {
+                    "required": false,
+                    "type": "string"
+                },
+                "RServer": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "param_droits": {
+            "index": "Kparam",
+            "fields": [
+                "Kparam",
+                "Kage",
+                "Param",
+                "Value"
+            ],
+            "field": {
+                "Kparam": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kage": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Param": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Value": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "photo": {
+            "index": "PID",
+            "fields": [
+                "PID",
+                "MATRI",
+                "PHOTO",
+                "Verrou",
+                "LOCK"
+            ],
+            "field": {
+                "PID": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "MATRI": {
+                    "required": false,
+                    "type": "string"
+                },
+                "PHOTO": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                },
+                "LOCK": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "position": {
+            "index": "Kpst",
+            "fields": [
+                "Kpst",
+                "IDPos",
+                "Position",
+                "Description",
+                "Ordre",
+                "Verrou",
+                "Archive"
+            ],
+            "field": {
+                "Kpst": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "IDPos": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Position": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Description": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Ordre": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                },
+                "Archive": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "recapitulatif": {
+            "index": "id_recapitulatif",
+            "fields": [
+                "id_recapitulatif",
+                "Kage",
+                "Date",
+                "Session",
+                "Nom_organisme",
+                "type_formation",
+                "upload"
+            ],
+            "field": {
+                "id_recapitulatif": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kage": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Date": {
+                    "required": true,
+                    "type": "date"
+                },
+                "Session": {
+                    "required": true,
+                    "type": "string"
+                },
+                "Nom_organisme": {
+                    "required": false,
+                    "type": "string"
+                },
+                "type_formation": {
+                    "required": true,
+                    "type": "int"
+                },
+                "upload": {
+                    "required": false,
+                    "type": "text"
+                }
+            }
+        },
+        "rolconsult": {
+            "index": "kRolConsult",
+            "fields": [
+                "kRolConsult",
+                "krol",
+                "KConsult"
+            ],
+            "field": {
+                "kRolConsult": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "krol": {
+                    "required": false,
+                    "type": "int"
+                },
+                "KConsult": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "roles": {
+            "index": "Krol",
+            "fields": [
+                "Krol",
+                "CodRol",
+                "LibRolc",
+                "LibRol",
+                "Verrou"
+            ],
+            "field": {
+                "Krol": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "CodRol": {
+                    "required": false,
+                    "type": "int"
+                },
+                "LibRolc": {
+                    "required": false,
+                    "type": "string"
+                },
+                "LibRol": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "sauvage": {
+            "index": "Ksav",
+            "fields": [
+                "Ksav",
+                "Kuse",
+                "LibSavc",
+                "LibSav",
+                "DatSav",
+                "Troncage",
+                "Verrou"
+            ],
+            "field": {
+                "Ksav": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kuse": {
+                    "required": true,
+                    "type": "int"
+                },
+                "LibSavc": {
+                    "required": false,
+                    "type": "string"
+                },
+                "LibSav": {
+                    "required": false,
+                    "type": "string"
+                },
+                "DatSav": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "Troncage": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "services": {
+            "index": "Kser",
+            "fields": [
+                "Kser",
+                "Ksub",
+                "Kadr",
+                "LibSerC",
+                "LibSer",
+                "Telephone",
+                "Fax",
+                "Obs",
+                "CodHie",
+                "Chemin",
+                "Archive",
+                "Verrou",
+                "Code"
+            ],
+            "field": {
+                "Kser": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Ksub": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Kadr": {
+                    "required": false,
+                    "type": "int"
+                },
+                "LibSerC": {
+                    "required": false,
+                    "type": "string"
+                },
+                "LibSer": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Telephone": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Fax": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Obs": {
+                    "required": false,
+                    "type": "text"
+                },
+                "CodHie": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Chemin": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Archive": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                },
+                "Code": {
+                    "required": false,
+                    "type": "string"
+                }
+            }
+        },
+        "situadm": {
+            "index": "idsituadm",
+            "fields": [
+                "idsituadm",
+                "kage",
+                "ECH",
+                "INM",
+                "DAT"
+            ],
+            "field": {
+                "idsituadm": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "kage": {
+                    "required": false,
+                    "type": "string"
+                },
+                "ECH": {
+                    "required": false,
+                    "type": "string"
+                },
+                "INM": {
+                    "required": false,
+                    "type": "string"
+                },
+                "DAT": {
+                    "required": false,
+                    "type": "datetime"
+                }
+            }
+        },
+        "societes": {
+            "index": "Ksoc",
+            "fields": [
+                "Ksoc",
+                "Kfam",
+                "Kpos",
+                "LibSocc",
+                "LibSoc",
+                "Adresse",
+                "Web",
+                "Mel",
+                "Telephone",
+                "Fax",
+                "Verrou"
+            ],
+            "field": {
+                "Ksoc": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kfam": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Kpos": {
+                    "required": true,
+                    "type": "int"
+                },
+                "LibSocc": {
+                    "required": false,
+                    "type": "string"
+                },
+                "LibSoc": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Adresse": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Web": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Mel": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Telephone": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Fax": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "srhmel": {
+            "index": "Ksrh",
+            "fields": [
+                "Ksrh",
+                "Kage",
+                "Melanie",
+                "SRHVac",
+                "SRH",
+                "Verrou"
+            ],
+            "field": {
+                "Ksrh": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kage": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Melanie": {
+                    "required": true,
+                    "type": "int"
+                },
+                "SRHVac": {
+                    "required": true,
+                    "type": "int"
+                },
+                "SRH": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "subdis": {
+            "index": "Ksub",
+            "fields": [
+                "Ksub",
+                "Kuni",
+                "Kadr",
+                "LibSubC",
+                "LibSub",
+                "HorSect",
+                "Code",
+                "Telephone",
+                "Fax",
+                "Obs",
+                "CodHie",
+                "Chemin",
+                "Archive",
+                "Verrou",
+                "subGESPER",
+                "Kets",
+                "responsable"
+            ],
+            "field": {
+                "Ksub": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kuni": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Kadr": {
+                    "required": false,
+                    "type": "int"
+                },
+                "LibSubC": {
+                    "required": false,
+                    "type": "string"
+                },
+                "LibSub": {
+                    "required": false,
+                    "type": "string"
+                },
+                "HorSect": {
+                    "required": false,
+                    "type": "char(10)"
+                },
+                "Code": {
+                    "required": false,
+                    "type": "char(10)"
+                },
+                "Telephone": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Fax": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Obs": {
+                    "required": false,
+                    "type": "text"
+                },
+                "CodHie": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Chemin": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Archive": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                },
+                "subGESPER": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Kets": {
+                    "required": false,
+                    "type": "int"
+                },
+                "responsable": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "trombi": {
+            "index": "kage",
+            "fields": [
+                "kage",
+                "trombi"
+            ],
+            "field": {
+                "kage": {
+                    "required": true,
+                    "type": "int"
+                },
+                "trombi": {
+                    "required": false,
+                    "type": "text"
+                }
+            }
+        },
+        "type_formation": {
+            "index": "id_formation",
+            "fields": [
+                "id_formation",
+                "Libelle",
+                "frequence"
+            ],
+            "field": {
+                "id_formation": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Libelle": {
+                    "required": true,
+                    "type": "string"
+                },
+                "frequence": {
+                    "required": true,
+                    "type": "int"
+                }
+            }
+        },
+        "unites": {
+            "index": "Kuni",
+            "fields": [
+                "Kuni",
+                "Kadr",
+                "LibUnic",
+                "LibUni",
+                "Telephone",
+                "Fax",
+                "Obs",
+                "CodHie",
+                "Chemin",
+                "Archive",
+                "Verrou",
+                "uniGESPER",
+                "Code",
+                "Kets",
+                "responsable"
+            ],
+            "field": {
+                "Kuni": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kadr": {
+                    "required": false,
+                    "type": "int"
+                },
+                "LibUnic": {
+                    "required": false,
+                    "type": "string"
+                },
+                "LibUni": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Telephone": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Fax": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Obs": {
+                    "required": false,
+                    "type": "text"
+                },
+                "CodHie": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Chemin": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Archive": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                },
+                "uniGESPER": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Code": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Kets": {
+                    "required": false,
+                    "type": "int"
+                },
+                "responsable": {
+                    "required": false,
+                    "type": "int"
+                }
+            }
+        },
+        "useannex": {
+            "index": "Kuseann",
+            "fields": [
+                "Kuseann",
+                "Kuse",
+                "Kann",
+                "Verrou"
+            ],
+            "field": {
+                "Kuseann": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kuse": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Kann": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "users": {
+            "index": "Kuse",
+            "fields": [
+                "Kuse",
+                "Kage",
+                "IdPasseport",
+                "DatDerCon",
+                "Activite",
+                "Admin",
+                "Srh",
+                "Unite",
+                "SPMG",
+                "Verrou",
+                "Consult",
+                "CFA"
+            ],
+            "field": {
+                "Kuse": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kage": {
+                    "required": true,
+                    "type": "int"
+                },
+                "IdPasseport": {
+                    "required": true,
+                    "type": "int"
+                },
+                "DatDerCon": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "Activite": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Admin": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Srh": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Unite": {
+                    "required": true,
+                    "type": "int"
+                },
+                "SPMG": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                },
+                "Consult": {
+                    "required": false,
+                    "type": "int"
+                },
+                "CFA": {
+                    "required": true,
+                    "type": "int"
+                }
+            }
+        },
+        "vehassu": {
+            "index": "Kvas",
+            "fields": [
+                "Kvas",
+                "NomAss",
+                "Verrou"
+            ],
+            "field": {
+                "Kvas": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "NomAss": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "vehmark": {
+            "index": "Kvmk",
+            "fields": [
+                "Kvmk",
+                "Marque",
+                "Verrou"
+            ],
+            "field": {
+                "Kvmk": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Marque": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "vehmod": {
+            "index": "Kvmd",
+            "fields": [
+                "Kvmd",
+                "Kvmk",
+                "Modele",
+                "CV",
+                "Verrou"
+            ],
+            "field": {
+                "Kvmd": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "Kvmk": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Modele": {
+                    "required": false,
+                    "type": "string"
+                },
+                "CV": {
+                    "required": false,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        },
+        "versions": {
+            "index": "Kver",
+            "fields": [
+                "Kver",
+                "LibVer",
+                "DatVer",
+                "Numero",
+                "Obs",
+                "Activite",
+                "Verrou"
+            ],
+            "field": {
+                "Kver": {
+                    "required": true,
+                    "type": "counter"
+                },
+                "LibVer": {
+                    "required": false,
+                    "type": "string"
+                },
+                "DatVer": {
+                    "required": false,
+                    "type": "datetime"
+                },
+                "Numero": {
+                    "required": false,
+                    "type": "string"
+                },
+                "Obs": {
+                    "required": false,
+                    "type": "text"
+                },
+                "Activite": {
+                    "required": true,
+                    "type": "int"
+                },
+                "Verrou": {
+                    "required": false,
+                    "type": "blob"
+                }
+            }
+        }
+    }
+}
